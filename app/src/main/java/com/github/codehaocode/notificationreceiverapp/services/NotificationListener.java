@@ -51,7 +51,7 @@ public class NotificationListener extends NotificationListenerService {
 
     private void sendBroadcast(int notificationId, String packageName, String appName, String text, Calendar calendar) {
         Intent intent = new Intent(NotificationReceiver.ACTION_NOTIFICATION_RECEIVED);
-//        intent.setAction("com.github.codehaocode.firstnotificationmanagerapp");
+//        intent.setAction("com.github.codehaocode.notificationreceiverapp");
         intent.putExtra(EXTRA_NOTIFICATION_ID, notificationId);
         intent.putExtra(EXTRA_NOTIFICATION_APP_NAME, appName);
         intent.putExtra(EXTRA_NOTIFICATION_APP_PACKAGE_NAME, packageName);

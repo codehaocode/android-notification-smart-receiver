@@ -25,7 +25,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/img_no_notifications"
-        app:layout_constraintBottom_toTopOf="@id/serviceToggleButton"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -46,9 +46,8 @@
         android:id="@+id/rvList"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginBottom="@dimen/button_margin_bottom"
         android:visibility="gone"
-        app:layout_constraintBottom_toTopOf="@id/serviceToggleButton"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/toolbar"
@@ -61,19 +60,4 @@
         android:visibility="visible"
         app:constraint_referenced_ids="noNotifications, noNotificationsText" />
 
-    <Button
-        android:id="@+id/serviceToggleButton"
-        style="@style/ButtonTextStyle"
-        android:layout_width="0dp"
-        android:layout_height="@dimen/button_height"
-        android:layout_marginStart="@dimen/button_margin_side"
-        android:layout_marginEnd="@dimen/button_margin_side"
-        android:layout_marginBottom="@dimen/button_margin_bottom"
-        android:background="@drawable/rounded_button"
-        android:backgroundTint="@color/buttonInactive"
-        android:elevation="30dp"
-        android:text="@string/start"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -45,9 +45,9 @@ public class MainActivity extends DaggerAppCompatActivity implements FilterView.
         initFilterView();
         initRecyclerView();
         viewModel = new ViewModelProvider(getViewModelStore(), factory).get(com.github.codehaocode.notificationreceiverapp.presentation.MainViewModel.class);
-        initOnClick();
         initObservers();
-
+        viewModel.setServiceActive(true);
+        startService();
         if (Build.VERSION.SDK_INT >= 21)
             getWindow().setNavigationBarColor(getResources().getColor(R.color.colorGray));
     }
@@ -105,20 +105,10 @@ public class MainActivity extends DaggerAppCompatActivity implements FilterView.
         binding.rvList.setAdapter(new com.github.codehaocode.notificationreceiverapp.presentation.NotificationsListAdapter());
     }
 
-    private void initOnClick() {
-        binding.serviceToggleButton.setOnClickListener((v) -> {
-            if (!((Application) getApplication()).isNotificationServiceEnabled()) {
-                getNotificationListenerDialog().show();
-            } else {
-                viewModel.toggleService();
-            }
-        });
-    }
 
     private void initObservers() {
         viewModel.getNotifications().observe(this, this::updateAdapter);
         viewModel.getFilteringMode().observe(this, filterView::setFilteringMode);
-        viewModel.getServiceActiveState().observe(this, this::updateButtonState);
     }
 
     private void updateAdapter(List<NotificationModel> notifications) {
@@ -128,15 +118,6 @@ public class MainActivity extends DaggerAppCompatActivity implements FilterView.
         getAdapter().notifyDataSetChanged();
     }
 
-    private void updateButtonState(boolean isActive) {
-        binding.serviceToggleButton.setText(isActive ? R.string.stop : R.string.start);
-        binding.serviceToggleButton.setBackgroundTintList(ColorStateList.valueOf(isActive ? getColor(R.color.buttonActive) : getColor(R.color.buttonInactive)));
-        if (isActive) {
-            startService();
-        } else {
-            stopService();
-        }
-    }
 
     private void setFilterViewVisibility(boolean isVisible) {
         if (isVisible) {

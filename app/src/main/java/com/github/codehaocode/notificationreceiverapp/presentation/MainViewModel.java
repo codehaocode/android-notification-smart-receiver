@@ -30,7 +30,7 @@ import static com.github.codehaocode.notificationreceiverapp.presentation.filter
 public class MainViewModel extends ViewModel {
 
     private NotificationsRepository notificationsRepository;
-    private boolean serviceState;
+    private boolean serviceState = true;
 
     private CompositeDisposable disposable;
     private Subject<FilterMode> subject;
