@@ -11,7 +11,7 @@ public abstract class NotificationsDatabase extends RoomDatabase {
 
     public abstract NotificationsDao notificationsDao();
 
-    private static final String DATABASE_NAME = "NotificationsDatabase";
+    private static final String DATABASE_NAME = "App2NotificationsDatabase";
 
     public static NotificationsDatabase getInstance(Context context) {
         return Room.databaseBuilder(context, NotificationsDatabase.class, DATABASE_NAME).fallbackToDestructiveMigration().build();

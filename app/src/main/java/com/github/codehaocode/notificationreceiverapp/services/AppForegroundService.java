@@ -27,8 +27,8 @@ import dagger.android.DaggerService;
 public class AppForegroundService extends DaggerService {
 
     private NotificationReceiver notificationReceiver;
-    private static final int FOREGROUND_SERVICE_NOTIFICATION_ID = 4312;
-    private static final int NOTIFICATION_JOB_ID = 3123;
+    private static final int FOREGROUND_SERVICE_NOTIFICATION_ID = 431;
+    private static final int NOTIFICATION_JOB_ID = 312;
     private static final long NOTIFICATION_JOB_INTERVAL = TimeUnit.HOURS.toMillis(3);
     private static final long NOTIFICATION_JOB_INTERVAL_FLEX = (long) (NOTIFICATION_JOB_INTERVAL * 0.01);
 

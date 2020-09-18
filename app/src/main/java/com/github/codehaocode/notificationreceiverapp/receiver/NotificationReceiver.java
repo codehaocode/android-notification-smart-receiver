@@ -16,7 +16,7 @@ import static com.github.codehaocode.notificationreceiverapp.services.Notificati
 
 public class NotificationReceiver extends BroadcastReceiver {
 
-    public static final String ACTION_NOTIFICATION_RECEIVED = "com.github.codehaocode.firstnotificationmanagerapp";
+    public static final String ACTION_NOTIFICATION_RECEIVED = "com.github.codehaocode.notificationreceiverapp";
 
     @Override
     public void onReceive(Context context, Intent intent) {
