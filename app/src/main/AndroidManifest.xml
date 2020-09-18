@@ -16,6 +16,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-    </application>
 
+        <receiver android:name="com.github.codehaocode.secondnotificationmanagerapp.receiver.NotificationReceiver"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.pkg.perform.Ruby" />
+            </intent-filter>
+        </receiver>
+
+    </application>
 </manifest>
