@@ -1,4 +1,4 @@
-package com.github.codehaocode.secondnotificationmanagerapp;
+package com.github.codehaocode.notificationreceiverapp;
 
 import org.junit.Test;
 

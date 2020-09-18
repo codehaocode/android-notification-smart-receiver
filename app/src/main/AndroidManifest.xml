@@ -1,8 +1,10 @@
-<?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.github.codehaocode.secondnotificationmanagerapp">
+    package="com.github.codehaocode.notificationreceiverapp">
+
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
 
     <application
+        android:name="com.github.codehaocode.notificationreceiverapp.Application"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -10,21 +12,31 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.NoActionBar">
 
-        <activity android:name=".MainActivity">
+        <activity
+            android:name="com.github.codehaocode.notificationreceiverapp.presentation.MainActivity"
+            android:launchMode="singleInstance">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
 
-        <receiver android:name="com.github.codehaocode.secondnotificationmanagerapp.receiver.NotificationReceiver"
+        <service android:name="com.github.codehaocode.notificationreceiverapp.services.AppForegroundService" />
+        <service
+            android:name="com.github.codehaocode.notificationreceiverapp.services.NotificationProcessorService"
+            android:permission="android.permission.BIND_JOB_SERVICE" />
+        <service
+            android:name="com.github.codehaocode.notificationreceiverapp.services.NotificationJobScheduler"
+            android:permission="android.permission.BIND_JOB_SERVICE" />
+
+        <receiver
+            android:name="com.github.codehaocode.notificationreceiverapp.receiver.NotificationReceiver"
             android:enabled="true"
-            android:exported="true">
+            android:exported="false">
             <intent-filter>
-                <action android:name="com.pkg.perform.Ruby" />
+                <action android:name="com.github.codehaocode.notificationreceiverapp.receiver.NotificationReceiver" />
             </intent-filter>
         </receiver>
-
     </application>
+
 </manifest>

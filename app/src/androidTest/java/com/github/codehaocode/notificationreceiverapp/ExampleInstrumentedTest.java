@@ -1,4 +1,4 @@
-package com.github.codehaocode.secondnotificationmanagerapp;
+package com.github.codehaocode.notificationreceiverapp;
 
 import android.content.Context;
 
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
     public void useAppContext() {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
-        assertEquals("com.github.codehaocode.secondnotificationmanagerapp", appContext.getPackageName());
+        assertEquals("com.github.cr9ck.notificationrecorder", appContext.getPackageName());
     }
 }
