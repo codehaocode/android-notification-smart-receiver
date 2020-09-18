@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Notification Receiver</string>
+    <string name="app_name">LOC</string>
     <string name="all">All</string>
     <string name="per_hour">Per Hour</string>
     <string name="per_day">Per Day</string>
