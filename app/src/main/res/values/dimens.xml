@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="button_margin_bottom">53dp</dimen>
+    <dimen name="button_margin_side">48dp</dimen>
+    <dimen name="button_height">60dp</dimen>
+    <dimen name="text_margin_top">15dp</dimen>
+    <dimen name="item_padding">16dp</dimen>
+    <dimen name="item_line_space">5dp</dimen>
+    <dimen name="radio_button_text_padding">20dp</dimen>
+    <dimen name="radio_button_padding">8dp</dimen>
+    <dimen name="radio_button_margin">8dp</dimen>
+    <dimen name="primary_text_size">20sp</dimen>
+    <dimen name="secondary_text_size">12sp</dimen>
+    <dimen name="date_text_size">10sp</dimen>
+    <dimen name="button_text_size">20sp</dimen>
+    <dimen name="app_name_size">20sp</dimen>
+    <dimen name="app_icon_size">48dp</dimen>
+</resources>
