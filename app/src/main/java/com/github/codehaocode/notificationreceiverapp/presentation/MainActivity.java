@@ -1,7 +1,6 @@
 package com.github.codehaocode.notificationreceiverapp.presentation;
 
 import android.content.Intent;
-import android.content.res.ColorStateList;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.Menu;
@@ -15,7 +14,6 @@ import androidx.core.content.ContextCompat;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
-import com.github.codehaocode.notificationreceiverapp.Application;
 import com.github.codehaocode.notificationreceiverapp.R;
 import com.github.codehaocode.notificationreceiverapp.databinding.ActivityMainBinding;
 import com.github.codehaocode.notificationreceiverapp.model.NotificationModel;
@@ -44,10 +42,10 @@ public class MainActivity extends DaggerAppCompatActivity implements FilterView.
         setSupportActionBar(binding.toolbar);
         initFilterView();
         initRecyclerView();
+        startService();
         viewModel = new ViewModelProvider(getViewModelStore(), factory).get(com.github.codehaocode.notificationreceiverapp.presentation.MainViewModel.class);
         initObservers();
         viewModel.setServiceActive(true);
-        startService();
         if (Build.VERSION.SDK_INT >= 21)
             getWindow().setNavigationBarColor(getResources().getColor(R.color.colorGray));
     }
